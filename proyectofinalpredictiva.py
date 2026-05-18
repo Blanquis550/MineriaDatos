@@ -19,35 +19,6 @@ import pandas as pd
 from scipy.io import arff
 import numpy as np
 
-# 1. Cargar los datos desde el archivo .arff: 'ProyectoFinalMineriaEIA2024.arff'
-datos_arff, meta = arff.loadarff('/content/ProyectoFinalMineriaEIA2024.arff')
-data = pd.DataFrame(datos_arff)
-
-# 2. Decodificar las variables categóricas
-# Las variables tipo 'object' suelen ser las categóricas que necesitan decodificación
-for columna in data.select_dtypes([object]).columns:
-    try:
-        data[columna] = data[columna].str.decode('utf-8')
-    except AttributeError: # Si ya está decodificado o no es una cadena de bytes
-        pass
-
-# 3. Copia de seguridad
-data_original = data.copy()
-print("Primeras filas de los datos cargados y decodificados:")
-display(data.head())
-print("Información general de los datos:")
-data.info()
-
-"""### 2. Preparación de Datos: Variables Dummies y Codificación de Etiquetas (LabelEncoder)
-Para que Scikit-Learn pueda trabajar eficientemente, es imprescindible que todas nuestras variables sean numéricas. En esta sección, aplicaremos `LabelEncoder` exclusivamente a nuestra variable objetivo. Para las variables predictoras categóricas, generaremos 'variables dummies'. Es de suma importancia seleccionar con precisión tanto la variable objetivo como las predictoras categóricas que se transformarán en dummies, ya que esto influirá directamente en el rendimiento de nuestros modelos.
-"""
-
-from sklearn.preprocessing import LabelEncoder
-import numpy as np
-
-# Reiniciar 'data' a partir de 'data_original' para asegurar un estado limpio
-data = data_original.copy()
-
 # --- IMPORTANTE: Aquí configuramos la variable objetivo y las variables categóricas predictoras ---
 nombre_objetivo = "EstadoSituacion" # <<< 'EstadoSituacion' es la variable a predecir
 
