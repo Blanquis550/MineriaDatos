@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 # 1. Cargar el modelo y los transformadores
-modelo_knn, vars_train, le, scaler = pickle.load(open('modelo_knn.pkl', 'rb'))
+modelo_knn, vars_train, le, scaler, vars_numericas, cat_predict = pickle.load(open('modelo_knn.pkl', 'rb'))
 # 2. Títulos de la aplicación
 st.title('Predicción Estado de Situación de Generadores')
 st.write("Ingrese los datos del generador para conocer su estado operativo:")
