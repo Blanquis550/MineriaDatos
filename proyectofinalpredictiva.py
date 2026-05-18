@@ -8,8 +8,6 @@ import numpy as np
 #### A. Árbol de Decisión (Entrenamiento sin normalización)
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn import metrics
-import matplotlib.pyplot as plt
-import seaborn as sns
 import numpy as np # Importar numpy
 print("\n--- ENTRENANDO Y EVALUANDO ÁRBOL DE DECISIÓN ---")
 # Aprendizaje
@@ -103,7 +101,6 @@ plt.show()
 #### C. K-Nearest Neighbors - KNN (Entrenamiento con datos normalizados)
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
-import matplotlib.pyplot as plt
 import numpy as np
 print("\n--- ENTRENANDO Y EVALUANDO K-NEAREST NEIGHBORS (KNN) ---")
 # Aprendizaje
