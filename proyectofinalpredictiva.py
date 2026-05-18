@@ -51,7 +51,7 @@ if st.button("Ejecutar Predicción"):
     
     # Advertencia ética (Regla de oro de la profe Ana Isabel)
     st.warning("⚠️ Nota: Las predicciones de este modelo tienen un margen de error según lo evaluado en la metodología CRISP-DM. Úsese como apoyo a la decisión.")
-3. Guarda y Reinicia
+# 3. Guarda y Reinicia
                 # 5. Predecir y mostrar resultado
         df['Predicción_Estado'] = le.inverse_transform(modelo_knn.predict(df_prep))
         st.success("¡Predicción exitosa!")
