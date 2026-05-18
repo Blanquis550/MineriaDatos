@@ -6,8 +6,6 @@ from scipy.io import arff
 import numpy as np
 # 1. Definir el nombre del archivo a subir a GitHub
 filename = 'modelo_knn.pkl'
-# 2. Extraer los nombres de las variables predictoras originales (X)
-variables_entrenamiento = X.columns.values
-# 3. Exportar el Modelo y todas sus herramientas de transformación
+# 2. Exportar el Modelo y todas sus herramientas de transformación
 with open(filename, 'wb') as archivo:
     pickle.dump([model_knn, variables_entrenamiento, labelencoder, min_max_scaler], archivo)
